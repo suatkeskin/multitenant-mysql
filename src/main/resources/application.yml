@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: MultiTenant
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/mysql_master?useSSL=false'
+    username: 'mysql_master'
+    password: 'mysql_master'

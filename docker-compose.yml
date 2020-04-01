@@ -1,0 +1,15 @@
+mysql_master:
+  container_name: mysql_master
+  image: mysql
+  command: mysqld --character-set-server=latin5 --collation-server=latin5_turkish_ci
+  ports:
+    - "3306:3306"
+  expose:
+    - "3306"
+  environment:
+    - MYSQL_USER=mysql_master
+    - MYSQL_PASSWORD=mysql_master
+    - MYSQL_DATABASE=mysql_master
+    - MYSQL_ROOT_PASSWORD=root
+  volumes:
+    - ./docker/provision/mysql/init:/docker-entrypoint-initdb.d
